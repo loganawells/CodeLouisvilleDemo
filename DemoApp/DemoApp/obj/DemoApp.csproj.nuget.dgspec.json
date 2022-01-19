@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Logan\\source\\repos\\CodeLouisvilleDemos\\DemoApp\\DemoApp\\DemoApp.csproj": {}
+    "C:\\Users\\Logan\\Source\\Repos\\CodeLouisvilleDemo\\DemoApp\\DemoApp\\DemoApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Logan\\source\\repos\\CodeLouisvilleDemos\\DemoApp\\DemoApp\\DemoApp.csproj": {
+    "C:\\Users\\Logan\\Source\\Repos\\CodeLouisvilleDemo\\DemoApp\\DemoApp\\DemoApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Logan\\source\\repos\\CodeLouisvilleDemos\\DemoApp\\DemoApp\\DemoApp.csproj",
+        "projectUniqueName": "C:\\Users\\Logan\\Source\\Repos\\CodeLouisvilleDemo\\DemoApp\\DemoApp\\DemoApp.csproj",
         "projectName": "DemoApp",
-        "projectPath": "C:\\Users\\Logan\\source\\repos\\CodeLouisvilleDemos\\DemoApp\\DemoApp\\DemoApp.csproj",
+        "projectPath": "C:\\Users\\Logan\\Source\\Repos\\CodeLouisvilleDemo\\DemoApp\\DemoApp\\DemoApp.csproj",
         "packagesPath": "C:\\Users\\Logan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Logan\\source\\repos\\CodeLouisvilleDemos\\DemoApp\\DemoApp\\obj\\",
+        "outputPath": "C:\\Users\\Logan\\Source\\Repos\\CodeLouisvilleDemo\\DemoApp\\DemoApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Logan\\AppData\\Roaming\\NuGet\\NuGet.Config",
