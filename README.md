@@ -1,2 +1,2 @@
 # CodeLouisvilleDemo
-A repo for Code Louisville demos
+A repo for Code Louisville demos.
