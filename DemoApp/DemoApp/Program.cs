@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace DemoApp
 {
@@ -6,7 +7,21 @@ namespace DemoApp
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string alphabet = GenerateAlphabetString();
+
+			Console.WriteLine(alphabet);
+		}
+
+		private static string GenerateAlphabetString()
+		{
+			var alphabet = new StringBuilder();
+
+			for (char letter = 'A'; letter <= 'Z'; letter++)
+			{
+				alphabet.Append(letter);
+			}
+
+			return alphabet.ToString();
 		}
 	}
 }
