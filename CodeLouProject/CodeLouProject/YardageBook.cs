@@ -12,7 +12,6 @@ namespace CodeLouProject
 	{
 		string clubFile = @"C:\Users\Logan\source\repos\CodeLouisvilleDemo\CodeLouProject\clubs.json";
 		List<GolfClub>? golfBag;
-		
 
 		public YardageBook(string appName) : base(appName)
 		{
@@ -61,6 +60,7 @@ namespace CodeLouProject
 			Console.WriteLine("**************************************************");
 			Console.WriteLine();
 		}
+
 		private void ReturnToMenu()
 		{
 			Console.WriteLine("Press any key to return to the menu...");
