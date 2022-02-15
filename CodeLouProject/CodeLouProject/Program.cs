@@ -8,7 +8,7 @@ namespace CodeLouProject
 	{
 		static void Main(string[] args)
 		{
-			var gameObject = new YardageBook("Test app name");
+			var gameObject = new YardageBook("Yardage Book");
 			gameObject.Run();
 		}
 	}

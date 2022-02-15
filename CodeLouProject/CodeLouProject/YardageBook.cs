@@ -10,11 +10,13 @@ namespace CodeLouProject
 {
 	internal class YardageBook : CodeLouisvilleAppBase
 	{
+		string clubFile = @"C:\Users\Logan\source\repos\CodeLouisvilleDemo\CodeLouProject\clubs.json";
 		List<GolfClub>? golfBag;
+		
 
 		public YardageBook(string appName) : base(appName)
 		{
-			string jsonString = File.ReadAllText(@"C:\Users\Logan\source\repos\CodeLouisvilleDemo\CodeLouProject\clubs.json");
+			string jsonString = File.ReadAllText(clubFile);
 			golfBag = JsonSerializer.Deserialize<List<GolfClub>>(jsonString);
 		}
 
@@ -55,7 +57,7 @@ namespace CodeLouProject
 		private void DisplayHeaderMenu()
 		{
 			Console.WriteLine("**************************************************");
-			Console.WriteLine("*******    Welcome to your Yardage Book    *******");
+			Console.WriteLine("***********      My Yardage Book      ************");
 			Console.WriteLine("**************************************************");
 			Console.WriteLine();
 		}
@@ -81,7 +83,31 @@ namespace CodeLouProject
 
 		private void RunUpdateOption()
 		{
-			Console.WriteLine("Update selected");
+			var updateMenu = new List<KeyValuePair<int, string>>();
+
+			if (golfBag is not null)
+			{
+				for (int i = 1; i <= golfBag.Count; i++)
+				{
+					updateMenu.Add(new KeyValuePair<int, string>(i, $"{golfBag[i - 1].Name} ({golfBag[i - 1].Yardage})"));
+				}
+			}
+
+			int selection = Prompt4MenuItem<int>("Select a club to update:", updateMenu);
+			int yardage = Prompt4Integer($"Enter new {golfBag[selection - 1].Name} yardage: ");
+			golfBag[selection - 1].Yardage = yardage;
+
+			try
+			{
+				string jsonString = JsonSerializer.Serialize(golfBag);
+				File.WriteAllText(clubFile, jsonString);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Something went wrong trying to save the file: {ex.Message}");	
+			}
+
+			Console.WriteLine($"\nSuccessfully updated {golfBag[selection - 1].Name} to {yardage}.");
 			ReturnToMenu();
 		}
 	}
