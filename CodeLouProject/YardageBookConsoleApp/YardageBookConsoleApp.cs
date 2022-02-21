@@ -81,12 +81,10 @@ namespace YardageBookConsoleApp
         private void RunUpdateOption()
         {
             var updateMenu = new List<KeyValuePair<int, string>>();
-            var updateList = new Dictionary<int, GolfClub>();
             var clubs = golfBag.GetClubs();
 
             for (int i = 1; i <= clubs.Count; i++)
             {
-                updateList.Add(i, clubs[i - 1]);
                 updateMenu.Add(new KeyValuePair<int, string>(i, $"{clubs[i - 1].Name} ({clubs[i - 1].Yardage})"));
             }
 
@@ -104,7 +102,7 @@ namespace YardageBookConsoleApp
                 Console.WriteLine("Something went wrong trying to update the golf bag: {ex.Message}");
             }
 
-            Console.WriteLine($"\nSuccessfully updated {updateList[selection].Name} to {yardage}.");
+            Console.WriteLine($"\nSuccessfully updated {club.Name} to {yardage}.");
             ReturnToMenu();
         }
     }
