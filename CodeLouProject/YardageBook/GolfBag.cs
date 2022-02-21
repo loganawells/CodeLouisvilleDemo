@@ -29,18 +29,8 @@ namespace YardageBook
             {
                 club.Yardage = updatedClub.Yardage;
             }
-        }
-        public void UpdateClubYardage(string name, int yardage)
-        {
-            var club = clubs.First(c => c.Name == name);
-            club.Yardage = yardage;
 
             FileUtility.SaveJsonFile(clubs, saveFile);
-        }
-
-        public void SaveBag(string saveFilePath)
-        {
-            FileUtility.SaveJsonFile(clubs, saveFilePath);
         }
     }
 }
