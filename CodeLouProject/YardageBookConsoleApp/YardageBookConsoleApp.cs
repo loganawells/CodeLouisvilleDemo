@@ -86,20 +86,18 @@ namespace YardageBookConsoleApp
 
             for (int i = 1; i <= clubs.Count; i++)
             {
-                updateList.Add(i, clubs[i-1]);
+                updateList.Add(i, clubs[i - 1]);
                 updateMenu.Add(new KeyValuePair<int, string>(i, $"{clubs[i - 1].Name} ({clubs[i - 1].Yardage})"));
             }
 
             int selection = Prompt4MenuItem<int>("Select a club to update:", updateMenu);
-            int yardage = Prompt4Integer($"Enter new {updateList[selection].Name} yardage: ");
+            GolfClub club = clubs[selection - 1];
+            int yardage = Prompt4Integer($"Enter new {club.Name} yardage: ");
+            club.Yardage = yardage;
 
             try
             {
-                golfBag.UpdateClub(new GolfClub
-                {
-                    Name = updateList[selection].Name,
-                    Yardage = yardage
-                });
+                golfBag.UpdateClub(club);
             }
             catch (Exception ex)
             {
