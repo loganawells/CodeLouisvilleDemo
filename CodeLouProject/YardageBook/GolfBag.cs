@@ -22,6 +22,11 @@ namespace YardageBook
             return clubs;
         }
 
+        public int GetClubCount()
+        {
+            return clubs.Count;
+        }
+
         public void UpdateClub(GolfClub updatedClub)
         {
             var club = clubs.First(c => c.Name == updatedClub.Name);

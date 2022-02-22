@@ -77,6 +77,9 @@ namespace YardageBookConsoleApp
         private void RunViewOption()
         {
             var clubs = golfBag.GetClubs();
+            int clubCount = golfBag.GetClubCount();
+
+            Console.WriteLine($"{clubCount} clubs");
 
             foreach (GolfClub club in clubs)
             {
