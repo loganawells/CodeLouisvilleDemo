@@ -24,6 +24,7 @@ namespace YardageBookConsoleApp
             var menu = new List<KeyValuePair<int, string>>();
             menu.Add(new KeyValuePair<int, string>(1, "View yardages"));
             menu.Add(new KeyValuePair<int, string>(2, "Update club yardage"));
+            menu.Add(new KeyValuePair<int, string>(3, "Add new club"));
             menu.Add(new KeyValuePair<int, string>(9, "Exit"));
 
             int selection = Prompt4MenuItem<int>("What would you like to do? Please select a number:", menu);
@@ -40,6 +41,9 @@ namespace YardageBookConsoleApp
                     break;
                 case 2:
                     RunUpdateOption();
+                    break;
+                case 3:
+                    RunAddOption();
                     break;
                 case 9:
                     return false;
@@ -103,6 +107,22 @@ namespace YardageBookConsoleApp
             }
 
             Console.WriteLine($"\nSuccessfully updated {club.Name} to {yardage}.");
+            ReturnToMenu();
+        }
+
+        private void RunAddOption()
+        {
+            Console.Write("Enter new club name: ");
+            string name = Console.ReadLine();
+            int yardage = Prompt4Integer($"Enter yardage for {name}: ");
+
+            golfBag.AddClub(new GolfClub
+            {
+                Name = name,
+                Yardage = yardage
+            });
+
+            Console.WriteLine($"\nSuccessfully added new club: {name}.");
             ReturnToMenu();
         }
     }

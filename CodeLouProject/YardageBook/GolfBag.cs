@@ -32,5 +32,11 @@ namespace YardageBook
 
             FileUtility.SaveJsonFile(clubs, saveFile);
         }
+
+        public void AddClub(GolfClub club)
+        {
+            clubs.Add(club);
+            FileUtility.SaveJsonFile(clubs, saveFile);
+        }
     }
 }
