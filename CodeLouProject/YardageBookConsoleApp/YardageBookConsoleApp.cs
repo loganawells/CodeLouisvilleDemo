@@ -22,9 +22,10 @@ namespace YardageBookConsoleApp
             DisplayHeaderMenu();
 
             var menu = new List<KeyValuePair<int, string>>();
-            menu.Add(new KeyValuePair<int, string>(1, "View yardages"));
-            menu.Add(new KeyValuePair<int, string>(2, "Update club yardage"));
-            menu.Add(new KeyValuePair<int, string>(3, "Add new club"));
+            menu.Add(new KeyValuePair<int, string>(1, "View all yardages"));
+            menu.Add(new KeyValuePair<int, string>(2, "Choose a club for me"));
+            menu.Add(new KeyValuePair<int, string>(3, "Update club yardage"));
+            menu.Add(new KeyValuePair<int, string>(4, "Add a new club"));
             menu.Add(new KeyValuePair<int, string>(9, "Exit"));
 
             int selection = Prompt4MenuItem<int>("What would you like to do? Please select a number:", menu);
@@ -40,9 +41,12 @@ namespace YardageBookConsoleApp
                     RunViewOption();
                     break;
                 case 2:
-                    RunUpdateOption();
+                    RunChooseForMeOption();
                     break;
                 case 3:
+                    RunUpdateOption();
+                    break;
+                case 4:
                     RunAddOption();
                     break;
                 case 9:
@@ -79,6 +83,15 @@ namespace YardageBookConsoleApp
                 Console.WriteLine($"{club.Name}: {club.Yardage}");
             }
 
+            ReturnToMenu();
+        }
+
+        private void RunChooseForMeOption()
+        {
+            int yardage = Prompt4Integer($"Enter the distance to the hole: ");
+            KeyValuePair<string, string> club = golfBag.ChooseMyClub(yardage);
+
+            Console.WriteLine($"\nTo hit {yardage} yards, you should use a {club.Key} at {club.Value} power.");
             ReturnToMenu();
         }
 

@@ -36,7 +36,20 @@ namespace YardageBook
         public void AddClub(GolfClub club)
         {
             clubs.Add(club);
+            clubs = clubs.OrderByDescending(c => c.Yardage).ToList();
             FileUtility.SaveJsonFile(clubs, saveFile);
+        }
+
+        public KeyValuePair<string, string> ChooseMyClub(int yardage)
+        {
+            var clubsInYardOrder = clubs.OrderBy(c => c.Yardage);
+            GolfClub club = clubsInYardOrder.FirstOrDefault(c => c.Yardage >= yardage) ?? clubsInYardOrder.Last();
+            double swingPower = (double)yardage / (double)club.Yardage;
+
+            if (swingPower > 1)
+                swingPower = 1;
+
+            return new KeyValuePair<string, string>(club.Name, swingPower.ToString("P0"));
         }
     }
 }
