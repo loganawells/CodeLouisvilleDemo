@@ -5,6 +5,7 @@
 ```
 cd C:\Users\lwells
 ```
+> *You might need to run the below command at a higher folder level, for example the C drive, by doing `cd C:\` if you have a repository that's not under user folder.*
 3. Run the below command to list all the Git repositories within your user directory. The list will be output to the file GitRepos.txt.
 ```
 Get-ChildItem . -Attributes Directory+Hidden -ErrorAction SilentlyContinue -Filter ".git" -Recurse | Out-file -FilePath GitRepos.txt
