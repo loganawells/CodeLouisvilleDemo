@@ -13,7 +13,7 @@ Get-ChildItem . -Attributes Directory+Hidden -ErrorAction SilentlyContinue -Filt
 
       ![image](https://user-images.githubusercontent.com/9041008/158186104-81d986b6-218a-495f-89e8-eb95ee3db3a6.png)
 
-5. Open Git Bash.
+5. Open Git Bash (**NOT Powershell**).
 6. Navigate to each of the directories listed in the file and run the command to remove the file.
 ```
 cd /c/Users/lwells/source/repos/Logan/CodeLouisvilleDemo/
@@ -25,3 +25,4 @@ rm -rf .git
 ![image](https://user-images.githubusercontent.com/9041008/158187422-f74428b4-3a43-4549-b3a4-011b94ca576c.png)
 
 7. Optionally, delete all the files in the folder and the folder itself using the normal Windows way to delete.
+8. Repeat steps 6 and 7 for each of the repositories in GitRepos.txt that you want to delete.
