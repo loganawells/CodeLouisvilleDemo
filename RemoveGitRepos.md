@@ -1,13 +1,13 @@
 # Removing All Local Git Repositories
 
 1. Open Windows Powershell.
-2. Change directory to your C; drive (or whatever drive you want to search) by executing the below command.
+2. Change directory to your C: drive (or whatever drive you want to search) by executing the below command.
 ```
 cd C:\
 ```
 3. Run the below command to list all the Git repositories within your user directory. The list will be output to the file GitRepos.txt. **Be sure to update the output file path to match a folder that's on your computer.**
 ```
-Get-ChildItem . -Attributes Directory+Hidden -ErrorAction SilentlyContinue -Filter ".git" -Recurse | Out-file -FilePath C:\Users\lwells\GitRepos.txt
+Get-ChildItem . -Attributes Directory+Hidden -ErrorAction SilentlyContinue -Filter ".git" -Recurse | Out-file -FilePath C:\users\lwells\GitRepos.txt
 ```
 4. The file will contain a list of directories that have a ".git" file, which indicates a local repository exists.
 
