@@ -1,4 +1,4 @@
-# Removing All Local Git Repositories
+# Finding and Removing Local Git Repositories
 
 1. Open Windows Powershell.
 2. Change directory to your C: drive (or whatever drive you want to search) by executing the below command.
